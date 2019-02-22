@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- Student: Emmet Hayes
+		 Date: 11/06/17
+		 						Final Project: Band Website
+				I built this website for the class, but first started working on it as a personal project for my musical group. This project focused on lots of CSS transitions and styling specifics, and also using javascript and jQuery to provide some interactivity to the site. My initial project was a band website HTML template that I had found online... It had a massive stylesheet that I ended up chopping up and repurposing, and I also reorganized the website to include lots of links to peripheral websites that a band would use like spotify, bandcamp, etc... as well as crucial social media links at the bottom of the page. There are tons of links everywhere. I decided to style it like a trendy parallex scrolling all-in-one-page website, I've had friends in the music business say that it's the cool thing these days. Having it in one page makes things pretty simple on the HTML side and much more involved in the CSS and JS side, but thanks to my usage of previous backend languages I was able to pick up the styling and some of the javascript (i made my own bat animation and pulled a snippet from stackoverflow named scrollTo.js for the scrolling down page animation on the inOnePage page of the site. That page is the only page with the animation. I have provided some comments in all of the documents that I have worked on myself, and I have included some of the requirements for the project on specific standalone pages: my geolocation work is on the shows page, my draganddrop is implemented as a merch shop on the contact page, and there is a video natively embedded on the page on the videos page. For the full site page, i excluded things that I wouldn't actually use on the site, ie the geolocation and embedded video stuff, although I might someday use the draganddrop for selling merch.
+		 -->
+	<head>
+		<!-- next few lines make this page compatible with phones and old IE -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		<!-- this is the title seen when hovering over the page -->
+		<title>bathouse.net</title>
+		<!-- Loading third party fonts from links to google apis -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<!--
+		<link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+		-->
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="layout-styles.css" type="text/css">
+		
+		<!-- loading animation for the bat (for the canvas element) -->
+		<script type="text/javascript" src="js/batAnim.js"></script>
+		
+		<!-- following comment is for the special case of an old internet explorer user accessing theco site, will need to use special javascript library to supplement the site in the absense of html5. -->
+		<!--[if lt IE 9]
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+	</head>
+	<!-- The main body of the page, look up the div's id or class in he css sheet-->
+	<body class="header-collapse" onload="setup();">
+		<!-- this div id's the entire site's content and lets you generically style it -->
+		<div id="site-content">
+			<!-- site-header holds the logo and the links to scroll to different parts of the page-->
+			<header class="site-header">
+				<div class="container">
+					<a href="bathouse_home.net.html" id="branding">
+						<img src="images/BatHouseLogo.png" width = "120" height = "120" alt="Site Title">
+					</a> <!-- #branding -->
+					<nav class="main-navigation">
+						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<!-- <li class="menu-item"><a href="#homeScroll">Home</a></li> -->
+							<li class="menu-item"><a href="#musicScroll">Music</a></li>
+							<li class="menu-item"><a href="#showScroll">Shows</a></li>
+							<li class="menu-item"><a href="#videoScroll">Social Feed</a></li>
+							<!-- <li class="menu-item"><a href="#pressScroll">Press</a></li> -->
+							<li class="menu-item"><a href="#contactScroll">Contact</a></li>
+						</ul> <!-- .menu -->
+					</nav> <!-- .main-navigation -->
+				</div>
+			</header> <!-- .site-header -->
+				<!-- the slider div holds the 3 sliding view of the top of the page. powered with js-->
+				<div class="slider">
+					<ul class="slides">
+						<li class="lazy-bg1">
+							<div class="container">
+								<div id="homeScroll"><h2 class="slide-title">Stop Dying</h2></div>
+								<h3 class="slide-subtitle"><strong>EP available now</strong></h3>
+								<a href="https://bathouse.bandcamp.com/album/stop-dying" class="button round-corner">Buy Now</a>
+							</div>
+						</li>
+						<li class="lazy-bg2">
+							<div class="container">
+								<h2 class="slide-title">Social</h2>
+								<h3 class="slide-subtitle"><strong>Follow us</strong></h3>
+								<a href="https://www.instagram.com/bathouseband/" class="button round-corner">Instagram</a>
+								<a href="https://www.facebook.com/bathouseband/" class="button round-corner">Facebook</a>
+								<a href="https://www.twitter.com/bathouseband/" class="button round-corner">Twitter</a>
+							</div>
+						</li>
+						<li class="lazy-bg3">
+							<div class="container">
+								<h2 class="slide-title">Bat House</h2>
+								<h3 class="slide-subtitle"><strong>Check out our debut album</strong></h3>
+								<a href="https://bathouse.bandcamp.com/album/bat-house" class="button round-corner">Listen Here</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			<!-- behind all the main content will be a background-image in a fixed place parallax trendy-->
+			<main class="main-content">
+
+
+				<!-- music content div holds two embedded spotify iframes to stream bands music-->
+				<div class="music-content">
+					<div class="container">
+						<div id="spotifyLink1">
+							<a name="musicScroll"><p>Stream 'Stop Dying'</p></a>
+							<iframe src="https://open.spotify.com/embed/album/2Ag1XXvgP0CFYFAVLrCJRx" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+						</div>
+						<div id="spotifyLink2">
+							<p>Stream 'bat house'</p>
+							<iframe src="https://open.spotify.com/embed/album/0BCVx2mjP3fjjGaKHaDHto" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+						</div>
+					</div>
+				</div> <!-- .music-content -->
+				<!-- <div class="email-content">
+					<form action="mailto:bathouseband@gmail.com" class="newsletter-form">
+						<input type="email" placeholder="Join our email list for exclusive content...">
+						<input type="submit" class="button email" value="Subscribe">
+					</form>--><!-- .newsletter-form -->
+				<!-- </div> -->
+				<!-- section for upcoming events has an embedded widget from bandcamp with some style options-->
+				<div class="upcoming-event-content">
+					<div class="container">
+						<header class="section-header">
+							<a name="showScroll"><h2 class="section-title" align="middle">SHOWS</h2></a>
+						</header><!-- .section-header -->
+						<script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script><a id = "bandsInTown" class="bit-widget-initializer" data-artist-name="Bat House" data-display-local-dates="true" data-display-past-dates="true" data-data-auto-style="false" data-text-color="#FFFFFF" data-link-color="#FFBDF4"  data-display-limit="5" data-link-text-color="#FFFFCF"></a>
+					</div> <!-- .container -->
+				</div> <!-- .upcoming-event-content -->
+				<!-- this is the section for videos, displayed in either a 3x2 grid or 1 by 1 -->
+				<div class="video-section">
+					<div class="container">
+
+						<!--<h2 class="section-title">CHECK OUT OUR VIDEOS HERE!!!</h2> -->
+						<!-- <a name="videoScroll">
+						<div class="row"></a>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure>
+										<iframe width="370" height="258" src="https://www.youtube.com/embed/Ea422zHaweA" frameborder="0" allowfullscreen></iframe>
+									</figure>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure>
+										<iframe width="370" height="258" src="https://www.youtube.com/embed/pinOTJQxkXk" frameborder="0" allowfullscreen></iframe>
+									</figure>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure>
+										<iframe width="370" height="258" src="https://www.youtube.com/embed/lj-wHcmfmj8" frameborder="0" allowfullscreen></iframe>
+									</figure>
+								</div>
+							</div> --> <!--
+							<div class="col-md-4">
+								<div class="feature">
+									<figure>
+										<iframe width="370" height="258" src="https://www.youtube.com/embed/PH3WKKS4j3Y" frameborder="0" allowfullscreen></iframe>
+									</figure>
+									<h3 class="feature-title">Bat House - Yarn [OFFICIAL MUSIC VIDEO]</h3>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure>
+										<iframe width="370" height="258" src="https://www.youtube.com/embed/U8d2VD8qxPU" frameborder="0" allowfullscreen></iframe>
+									</figure>
+									<h3 class="feature-title">Bat House | "Viridian City" Live @ the Red Room (Boston, MA)</h3>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="feature">
+									<figure>
+										<iframe width="370" height="258" src="https://www.youtube.com/embed/p5KR7PxdPfo" frameborder="0" allowfullscreen></iframe>
+									</figure>
+									<h3 class="feature-title">Bat House Twist (official video)</h3>
+								</div>
+							</div>
+						</div>
+					</div>--> <!-- .container -->
+				</div> <!-- video-section -->
+				<!-- the quotes here are powered with js similarly to the slider at the top of the page-->
+				<!--
+				<div class="testimonial-section">
+					<div class="container">
+						<div class="section-title">Press</div>
+						<div class="quote-slider">
+							<ul class="slides">
+								<li>
+									<blockquote>
+										<a name="pressScroll"><p>"More than marching to the beat of their own drum, Bat House builds an abode according to their own architectural shape & design where the rogue’s galleries of past, present & future greats are channeled through their own intricate executions."</p></a>
+										<cite>Impose</cite>
+										<span>Magazine</span>
+									</blockquote>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div> --><!-- .testimonial-section -->
+				<!-- this is the canvas section, where i am drawing an array of bats flying across the screen -->
+			</main> <!-- .main-content -->	
+			<!-- footer contains image logo, email link, email list and social media links-->
+			<footer class="site-footer">
+				<div class="container">
+					<a name="videoScroll"><h2 class="section-title">THE BAT FEED</h2></a>
+					<script src="http://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="http://lightwidget.com/widgets/95ebacf1ca865b0aa7159e36a2545f47.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+					<div class="logo">
+						<a name="contactScroll"><img src="images/BatHouseLogo.png" width="120" height="120" alt="BatHouseLogo"></a>
+					</div>	
+					<p>email:</p>
+					<address>
+						<p><a href="mailto:bathouseband@gmail.com">bathouseband@gmail.com</a></p>
+					</address>
+					<p>booking:</p>
+					<address>
+						<p><a href="mailto:dell@newfrontiertouring.com">dell@newfrontiertouring.com</a></p>
+					</address>
+					<div class="container">
+						<form action="mailto:bathouseband@gmail.com" class="newsletter-form">
+							<input type="email" placeholder="Join our email list for exclusive content...">
+							<input type="submit" class="button email" value="Subscribe">
+						</form>
+					</div>
+<!-- .newsletter-form -->
+
+					<div class="social-links" align="middle">
+
+						<a href="https://www.facebook.com/bathouseband"><div id = "socialImage">
+						<img src="images/facebook_white1600.png" width="25" height="25"></div></a>
+						<a href="https://twitter.com/bathouseband"><div id = "socialImage"><img src="images/twitter_white1600.png" width="25" height="25"></div></a>
+						<a href="https://play.google.com/store/music/artist/Bat_House?id=Abzlqhhkpsdxasg7kaelyn7wfdy&hl=en"><div id = "socialImage"><img src="images/google_play_white1600.png" width="25" height="25"></div></i></a>
+						<a href="https://open.spotify.com/artist/5Mx0Jtw1HiOIysQDqIcGib"><div id = "socialImage"><img src="images/spotify_white1600.png" width="25" height="25"></div></a>
+						<a href="https://soundcloud.com/bat-house"><div id = "socialImage"><img src="images/soundcloud_white1600.png" width="25" height="25"></div></a>
+						<a href="https://www.instagram.com/bathouseband/"><div id="socialImage2"><img src="images/instagram_white1600.png" width="20" height="20" ></div></a>
+						<a href="https://www.youtube.com/channel/UCg-BJG6oam3qnLmdAuWx1ew"><div id="socialImage2"><img src="images/youtube_white1600.png" width="20" height="20"></div></a>
+					</div> <!-- .social-links -->
+					<div class="container">
+						<div class = "canvas-animation" align="middle">
+							<canvas id = "BatCanvas" width="480" height="360" style = "border-radius: 20px;">
+							</canvas>
+						</div>
+						<p class="copy">© Copyright 2019 Bat House</p>
+					</div>
+				</div>
+			</footer> <!-- .site-footer -->
+		</div> <!-- #site-content --> 
+		<script src="js/jquery-1.11.1.min.js"></script>		
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/scrollTo.js"></script>
+	</body>
+</html>

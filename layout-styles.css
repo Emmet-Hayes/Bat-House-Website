@@ -1,0 +1,722 @@
+/*!
+ * Project_Name: bathouse.net style sheet
+ * Author: Emmet Hayes
+ * Email: bathouseband@gmail.com
+ * URL: http://bathouse.net
+ */
+/* normalizing section */
+figure, footer, header, nav { display: block; }
+canvas {
+  display: inline-block; }
+/* html tag default is white background, black color */
+html {
+  background: #fff;
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+/* normalize fonts */
+html, button, input { font-family: sans-serif; }
+/* normalize body margin */
+body { margin: 0; }
+/* set transparent background on links */
+a { background: transparent; }
+  /* set thin dotted outline on focused links drawn OUTSIDE the borders */
+  a:focus { outline: thin dotted; }
+  /* set outline to false, its drawn OUTSIDE the borders to make it stand out */
+  a:hover, a:active { outline: 0; }
+/* normalize h1 */
+h1 { font-size: 2em; margin: 0.67em 0; line-height: normal; }
+/* normalize h2 */
+h2 { font-size: 1.5em; margin: 0.83em 0; line-height: normal; }
+/* normalize h3 */
+h3 { font-size: 1.17em; margin: 1em 0; line-height: normal; }
+/* normalize h4 */
+h4 { font-size: 1em; margin: 1.33em 0; line-height: normal; }
+/* normalize h5 */
+h5 { font-size: 0.83em; margin: 1.67em 0; line-height: normal; }
+/* normalize h6 */
+h6 { font-size: 0.75em; margin: 2.33em 0; line-height: normal; }
+/* normalize b and strong tags */
+b, strong { font-weight: bold; }
+/* normalize i and em tags */
+i, em { font-style: italic; }
+/* normalize image tag */
+img { border: 0; }
+/* normalize figure margins */
+figure { margin: 0; }
+/* normalize buttons and inputs to inherit fonts */
+button, input { font-family: inherit; font-size: 100%; margin: 0; vertical-align: baseline; line-height: normal; }
+/* set the selct and button tags to not transform text*/
+button, select { text-transform: none; }
+/* sets the webkit enabled browsers an button appearance with a cursor */
+button, html input[type="button"], input[type="reset"], input[type="submit"] { 
+  -webkit-appearance: button; cursor: pointer; }
+/* disabled buttons have a default cursor. */
+button[disabled], input[disabled] { cursor: default; }
+/* normalize the button focus for mozilla  */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0; padding: 0; }
+/* normalize the box-sizing of buttons */
+*, *:before, *:after { -moz-box-sizing: border-box; box-sizing: border-box; }
+/* body of the page, generic styling*/
+body {
+  background-color: #171717;
+  color: #FFFFFF;
+  font-family: 'Roboto', "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px; }
+/* normalize the entire site-content div */
+#site-content { overflow: hidden; }
+/* all buttons will be in this style unless styled otherwise*/
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #FF99EC;
+  border-color: #000000;
+  border-radius: 8px;
+  color: #2F2F2F;
+  text-decoration: none;
+  outline: none;
+  -webkit-transition: .3s ease;
+          transition: .3s ease;
+  font-family: 'milkshakeregular', sans-serif;
+  letter-spacing: 0.05em; }
+  /* hoverover color should be brighter */
+  .button:hover { background-color: #FFADF4; }
+  /* button with rounded corners */
+  .button.round-corner {
+      background: -webkit-linear-gradient(90deg, #FF99EC, #FF99EC) top left, -webkit-linear-gradient(90deg, #FF99EC, #FF99EC) top right, -webkit-linear-gradient(90deg, #FF99EC, #FF99EC) bottom right, -webkit-linear-gradient(90deg, #FF99EC, #FF99EC) bottom left;
+      background: linear-gradient(90deg, #FF99EC, #FF99EC) top left, linear-gradient(90deg, #FF99EC, #FF99EC) top right, linear-gradient(90deg, #FF99EC, #FF99EC bottom right), linear-gradient(90deg, #FF99EC, #FF99EC) bottom left;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+    /* hoeverover color should be brighter */
+    .button.round-corner:hover {
+      background: -webkit-linear-gradient(90deg, #FFADF4, #FFADF4) top left, -webkit-linear-gradient(90deg, #FFADF4, #FFADF4) top right, -webkit-linear-gradient(90deg, #FFADF4, #FFADF4) bottom right, -webkit-linear-gradient(90deg, #FFADF4, #FFADF4) bottom left;
+      background: linear-gradient(90deg, #FFADF4, #FFADF4) top left, linear-gradient(90deg, #FFADF4, #FFADF4) top right, linear-gradient(90deg, #FFADF4, #FFADF4 bottom right), linear-gradient(90deg, #FFADF4, #FFADF4) bottom left;
+      background-size: 55% 55%; background-repeat: no-repeat;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+    /* activated buttons are even brighter */
+    .button.round-corner:active {
+      background: -webkit-linear-gradient(90deg, #FFBDFA, #FFBDFA) top left, -webkit-linear-gradient(90deg, #FFBDFA, #FFBDFA) top right, -webkit-linear-gradient(90deg, #FFBDFA, #FFBDFA) bottom right, -webkit-linear-gradient(90deg, #FFBDFA, #FFBDFA) bottom left;
+      background: linear-gradient(90deg, #FFBDFA, #FFBDFA) top left, linear-gradient(90deg, #FFBDFA, #FFBDFA) top right, linear-gradient(90deg, #FFBDFA, #FFBDFA) bottom right, linear-gradient(90deg, #FFBDFA, #FFBDFA) bottom left;
+      background-size: 55% 55%; background-repeat: no-repeat;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+  /*special font for the email input*/
+  .button.email {
+  	font-family: 'milkshakeregular', cursive;
+  	letter-spacing: 0em;
+    float: right;
+
+  }
+/*container centers the left-right margins of things inside them*/
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  *zoom: 1; }
+  /* after  */
+  .container:after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    height: 0; }
+  /* depending on the media, setting minimum widths */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px; } }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px; } }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px; } }
+/* adding a margin in between row items*/
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  *zoom: 1; }
+  /* normalize after */
+  .row:after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    height: 0; }
+/* this is an item in the row*/
+.col-md-4 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+@media (min-width: 992px) {
+  /* width of item in the row is 3 */
+   .col-md-4 { float: left; width: 33.33333%; } }
+@-ms-viewport { width: device-width; }
+/* header for the site */
+.site-header {
+  *zoom: 1;
+  z-index: 99; }
+  /* normalize after */
+  .site-header:after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    height: 0; }
+  /* header positioning */
+  .header-collapse .site-header {
+    position: absolute;
+    width: 100%; }
+  /* normalize container and header */
+  .site-header .container {
+    *zoom: 1;
+  }
+    /* normalize container after */
+    .site-header .container:after {
+      content: " ";
+      clear: both;
+      display: block;
+      overflow: hidden;
+      height: 0; }
+/* style the branding on the top left of the page */
+#branding {
+  float: left;
+  position: relative;
+  margin: 15px 0 20px;
+  color: inherit;
+  text-decoration: none; }
+  /* style the image in the branding element */
+  #branding img { display: block; }
+  /* style the site description  */
+  #branding .site-description { display: block; margin: 0; }
+/* navigation bar floats right and branding goes left */
+.main-navigation { float: right; }
+  /* styling the toggle menu  */
+  .main-navigation .toggle-menu {
+    background: none;
+    color: #C4C4C4;
+    font-size: 18px;
+    font-size: 1.125em;
+    border: none;
+    outline: none;
+    position: relative;
+    top: 40px;
+    display: none; }
+    /* styling the toggle-menu as hovering or active */
+    .main-navigation .toggle-menu:hover, .main-navigation .toggle-menu:active, .main-navigation .toggle-menu.active {
+      color: #FF99EC; }
+    @media screen and (max-width: 640px) {
+      /* styling toggle-menus inside main nav to be block display */
+      .main-navigation .toggle-menu {
+        display: block; } }
+  /* style the menu for main navigation */
+  .main-navigation .menu {
+    list-style: none;
+    padding-left: 0;
+    margin: 0; }
+    @media screen and (min-width: 641px) {
+      /* styling for a min-width screen */
+      .main-navigation .menu {
+        display: block !important; } }
+    @media screen and (max-width: 640px) {
+      /* styling for a max-width screen */
+      .main-navigation .menu {
+        display: none; } }
+    /* styling for items in the menu */
+    .main-navigation .menu .menu-item {
+      position: relative;
+      font-family: 'milkshakeregular', cursive;
+      float: left; }
+      /* normalize them after */
+      .main-navigation .menu .menu-item:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        opacity: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid #FF99EC;
+        -webkit-transition: .3s ease;
+                transition: .3s ease; }
+      /* display none after */
+      .main-navigation .menu .menu-item:last-child a:after {
+        display: none; }
+      /* setting opacity of the menu to be 1 */
+      .main-navigation .menu .menu-item:hover:after, .main-navigation .menu .menu-item.current-menu-item:after {
+        opacity: 1; }
+      /* current menu items are pink */
+      .main-navigation .menu .menu-item:hover a, .main-navigation .menu .menu-item.current-menu-item a {
+        color: #FF99EC; }
+    /* links in the menu are this style */
+    .main-navigation .menu a {
+      display: block;
+      position: relative;
+      padding: 25px 10px;
+      color: white;
+      font-size: 15px;
+      font-size: 0.9375em;
+      font-weight: 600;
+      text-decoration: none;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+      /* normalize it after */
+      .main-navigation .menu a:after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        color: rgba(255, 255, 255, 0.15);
+        font-weight: 300; }
+/* style the footer for the site*/
+.site-footer {
+    /* background-image: url('images/Background1.jpg'); */
+    /* background-image: url('images/KitCastagneClass06.jpg'); */
+    /*background-image: url('images/bottom.jpg'); */
+    /* background-attachment: fixed; */
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover; 
+  padding: 50px 0;
+  text-align: center;
+   }
+.site-footer p {
+  color: #FFBDFA;
+  font-family: 'milkshakeregular', cursive;
+  font-size: 1.2em;
+  line-height: 6px;
+}
+  /* style the email address text */
+  .site-footer address { 
+    color: #FFFFFF;
+    font-style: normal;
+    font-size: 1.6em; }
+    /* style the link to the address text */
+    .site-footer address a { color: inherit; text-decoration: none; }
+  /* style the form for the footer */
+  .newsletter-form { margin: 30px 0; }
+    /* normalize and relativize the form */
+    .newsletter-form form { *zoom: 1; position: relative; }
+      /* normalize after */
+    .newsletter-form form:after {
+        content: " ";
+        clear: both;
+        display: block;
+        overflow: hidden;
+        height: 0; }
+    /* style the email input form */
+  .newsletter-form input[type="email"] {
+      width: 80%;
+      padding: 26px;
+      border-color: purple;
+      border-radius: 8px;
+      float: left;
+      background: #954093;
+      font-family: 'milkshakeregular', cursive;
+      font-size: 14px;
+      outline: none;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+
+  .newsletter-form input[type="email"]::placeholder {
+    color: black;
+    opacity: 1;
+  };
+
+  @media screen and (max-width: 480px) {
+        /* style the input email on a small device */
+    .newsletter-form input[type="email"] { width: 50%; } }
+      /* style the input email for a hover and active */
+  .newsletter-form input[type="email"]:hover, .newsletter-form input[type="email"]:focus {
+        background: #AF4CAC; 
+        color: #FFFFFF;
+      }
+    /* style the submit button for the email list */
+    .newsletter-form input[type="submit"] { width: 20%; padding: 25px; }
+      @media screen and (max-width: 480px) {
+        /* style the submit button for small device */
+        .newsletter-form input[type="submit"] {
+          width: 30%; } }
+  .site-footer .logo { margin-bottom: 0px; }
+  /* style the social links in the site footer */
+  .site-footer .social-links { margin: 0 auto; 
+  }
+    /* style the actual links in the social links */
+    .site-footer .social-links a {
+      display: inline-block;
+      vertical-align: middle;
+      width: 45px;
+      height: 45px;
+      background: -webkit-linear-gradient(0, #252525, #252525) top left, -webkit-linear-gradient(0, #252525, #252525) top right, -webkit-linear-gradient(0, #252525, #252525) bottom right, -webkit-linear-gradient(0, #252525, #252525) bottom left;
+      background: linear-gradient(0, #252525, #252525) top left, linear-gradient(0, #252525, #252525) top right, linear-gradient(0, #252525, #252525 0) bottom right, linear-gradient(0, #252525, #252525) bottom left;
+      background-size: 55% 55%;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      color: white;
+      /*margin: 10 5px;*/
+      margin: auto;
+      font-size: 20px;
+      font-size: 1.25em;
+      line-height: 45px; }
+      /* style the actual links as the mouse is hovering over */
+      .site-footer .social-links a:hover {
+        background: -webkit-linear-gradient(0, #4f4f4f, #4f4f4f) top left, -webkit-linear-gradient(0, #4f4f4f, #4f4f4f) top right, -webkit-linear-gradient(0, #4f4f4f #4f4f4f) bottom right, -webkit-linear-gradient(0, #4f4f4f, #4f4f4f) bottom left;
+        background: linear-gradient(0, #4f4f4f, #4f4f4f) top left, linear-gradient(0, #4f4f4f, #4f4f4f) top right, linear-gradient(0, #4f4f4f, #4f4f4f) bottom right, linear-gradient(0, #4f4f4f, #4f4f4f) bottom left;
+        background-size: 55% 55%;
+        background-repeat: no-repeat; }
+  /* style the copy div */
+  .site-footer .copy {
+    color: #C4C4C4;
+    font-weight: 300;
+    font-size: 14px;
+    font-size: 0.875em; }
+/* set the sliders to relative positioning */
+.slider { position: relative; }
+  /* normalize the settings for the slides */
+  .slider .slides {
+    *zoom: 1;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    background-size: cover;
+    overflow: hidden; }
+    /* normalize after */
+    .slider .slides:after {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      height: 0; }
+    /* style the list elements in the slides */
+    .slider .slides li {
+      margin-right: -100%;
+      width: 100%;
+      float: left;
+      min-height: 780px;
+      background-color: #171717;
+      background-size: cover; }
+    /* style the first background in the slides */
+    .slider .slides .lazy-bg1 {
+      /*background-image: url("images/Slide1.jpg"); */
+      /*background-image: url("images/Stop_Dying_Bat_House_Cover_Art.jpg"); */
+      background-image: url("images/slide-1.jpg");
+      /*background-attachment: fixed; */
+      background-position: center;
+      background-size: cover;
+    }
+    /* style the second background in the slides */
+    .slider .slides .lazy-bg2 {
+      /*background-image: url("images/Slide2.jpg"); */
+      /*background-image: url("images/BATHOUSElp.jpg"); */
+      background-image: url("images/slide-2.jpg");
+      /*background-attachment: fixed; */
+      background-position: top;
+      background-size: cover;
+    }
+    /* style the third background in the slides */
+    .slider .slides .lazy-bg3 {
+      /* background-image: url("images/Slide3.jpg"); */
+      /* background-image: url("images/Endless_Stair_Single_Artwork.jpg"); */
+      background-image: url("images/slide-3.jpg");
+      /*background-attachment: fixed; */
+      background-position: center;
+      background-size: cover;
+    }
+    /* style the fourth background in the slides */
+    .slider .slides .container {
+      padding: 200px 0;
+      text-align: center; }
+    /* style the title of the slides */
+    .slider .slides .slide-title {
+      margin: 0;
+      color: #FFFFFF;
+      font-family: 'neoretrodrawregular', sans-serif;
+      font-size: 92px;
+      font-size: 6.625em;
+      font-weight: 100;
+      line-height: 1;
+      -webkit-transform: scale(1.3);
+          -ms-transform: scale(1.3);
+              transform: scale(1.3);
+      opacity: 0;
+      -webkit-transition: .3s ease;
+              transition: .3s ease;
+      -webkit-transition-delay: .3s;
+              transition-delay: .3s; }
+    /* style the subtitles of the slides */
+    .slider .slides .slide-subtitle {
+      color: #FFFFFF;
+      font-family: 'neoretrodrawregular', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 48px;
+      font-size: 1.5em;
+      font-weight: 10;
+      -webkit-transform: scale(1.3);
+          -ms-transform: scale(1.3);
+              transform: scale(1.3);
+      opacity: 0;
+      -webkit-transition: .3s ease;
+              transition: .3s ease;
+      -webkit-transition-delay: .3s;
+              transition-delay: .3s; }
+    /* style the descriptions in each slide (if defined) */
+    .slider .slides .slide-desc {
+      font-size: 30px;
+      font-size: 1.875em;
+      font-weight: 300;
+      line-height: normal;
+      -webkit-transform: scale(1.3);
+          -ms-transform: scale(1.3);
+              transform: scale(1.3);
+      opacity: 0;
+      -webkit-transition: .3s ease;
+              transition: .3s ease;
+      -webkit-transition-delay: .3s;
+              transition-delay: .3s; }
+    /* normalize the scale on flex */
+    .slider .slides .flex-active-slide .slide-title, .slider .slides .flex-active-slide .slide-subtitle, .slider .slides .flex-active-slide .slide-desc {
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      opacity: 1; }
+  /* style the control-navigators for slides */
+  .slider .flex-control-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    z-index: 99;
+    text-align: center; }
+    /* style the list elements in the controls for the slider */
+    .slider .flex-control-nav li { display: inline-block; margin: 0 5px; }
+      /* style the links in the list element */
+      .slider .flex-control-nav li a {
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: url(images/pink_button.png) no-repeat 0 0;
+        text-indent: -99999px;
+        cursor: pointer; }
+        /* style the active link */
+        .slider .flex-control-nav li a.flex-active { background-position: -15px 0; }
+/* style the quote slider */
+.quote-slider { position: relative; margin: 80px 0; }
+  /* style the slides */
+  .quote-slider .slides {
+    *zoom: 1;
+    margin: 0;
+    padding-left: 0;
+    list-style: none; }
+    /* normalize the slides after */
+    .quote-slider .slides:after {
+      content: " ";
+      clear: both;
+      display: block;
+      overflow: hidden;
+      height: 0; }
+  /* set the margin for a blockquote element in quote-slider */
+  .quote-slider blockquote { margin: 0; }
+    /* style the paragraph inside the blockquote */
+    .quote-slider blockquote p {
+      font-family: 'Roboto';
+      font-size: 36px;
+      font-size: 2.25em;
+      color: white;
+      font-weight: 300;
+      line-height: normal; }
+    /* style the citation inside the blockquote */
+    .quote-slider blockquote cite {
+     font-family: 'Roboto';
+      display: block;
+      color: #FF99EC;
+      font-size: 24px;
+      font-size: 1.5em;
+      font-weight: 100;
+      font-style: normal; }
+  /* normalize the flex navigator */
+  .quote-slider .flex-direction-nav { *zoom: 1; list-style: none; padding-left: 0; }
+    /* normalize the flex after click */
+    .quote-slider .flex-direction-nav:after {
+      content: " ";
+      clear: both;
+      display: block;
+      overflow: hidden;
+      height: 0; }
+    /* style the list elements in the flexer */
+    .quote-slider .flex-direction-nav li { float: left; margin-right: 2px; }
+    /* style the link elements in the flexer for the quote slider */
+    .quote-slider .flex-direction-nav a {
+      display: block;
+      width: 33px;
+      height: 33px;
+      color: white;
+      background-color: #992d7c;
+      line-height: 32px;
+      text-align: center;
+      border: 1px;
+      border-radius: 24px;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+      /* style the link elements as they are hovered over */
+      .quote-slider .flex-direction-nav a:hover { background-color: #FF99EC; }
+/* style the title of sections */
+.section-title {
+  color: #A4209B;
+  font-family: 'neoretrodrawregular', serif;
+  font-size: 36px;
+  font-size: 2.25em;
+  font-weight: 700;
+  margin-top: 15px; }
+/* style the header of sections */
+.section-header {
+  *zoom: 1;
+  margin-bottom: 10px;
+  padding-top: 10px; }
+  /* normalize the section-header after */
+  .section-header:after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    height: 0; }
+  /* change the weight of the font for a title in a section-header */
+  .section-header .section-title {
+    font-size: 36px;
+    font-size: 2.25em;
+    font-weight: 700;
+    float: left; }
+/* style the text in a feature */
+.feature { text-align: center; 
+  margin-bottom: 50px; }
+  /*style the paragraphs in the feature class*/
+  .feature p { font-family: 'Roboto', sans-serif; 
+    color: #C4C4C4;}
+  /*style the figure elements in the feature class */
+  .feature figure { overflow: hidden; position: relative; }
+    /* style the round corner figures in the feature classs */
+    .feature figure.round-corner:after {
+      content: " ";
+      width: 37px;
+      height: 37px;
+      background: #141414;
+      position: absolute;
+      bottom: -15px;
+      right: -18px;
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    /* style the img inside of a figure in the feature class */
+    .feature figure img { width: 100%; max-width: 100%; height: auto; }
+  /* style the title of a feature in the feature class */
+  .feature .feature-title {
+    font-family: 'Roboto', cursive;
+    color: #CFCFCF;
+    font-size: 18px;
+    font-size: 1.125em;
+    font-weight: 400; }
+/* style the music content of the page */
+.music-content {
+  position:relative;
+  clear: right;
+  margin: auto;
+  text-align: center;
+  color: #CFCFCF;
+  font-family: 'milkshakeregular', cursive; }
+/* style the video with a native file in a folder*/
+#nativeVid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 33%;
+}
+/* style the canvas-animation section of a page*/
+.canvas-animation {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-bottom: 50px; */
+  padding-top: 20px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: 'milkshakeregular', cursive; }
+/* style the spotify links*/
+#spotifyLink1 {
+  display:inline-block;
+  text-align: middle;
+  /*padding-left: 8px;
+  padding-right: 8px;*/
+  padding-bottom: 60px; }
+#spotifyLink2 {
+  display: inline-block;
+  text-align: middle;
+  padding-left: 12px;
+  /*padding-right: 8px;*/
+  padding-bottom: 60px; }
+/*for some reason my social button graphics were off by a few pixels do i put
+them in a div and called it a day. */
+#socialImage {
+  margin-top: 3px;
+  position: relative;
+  /**/
+}
+#socialImage2 {
+  margin-top: 3px;
+  position: relative;
+  /**/
+}
+
+/*added fonts below*/
+@font-face {
+    font-family: 'milkshakeregular';
+    src: url('fonts/milkshake/milkshake-webfont.woff2') format('woff2'),
+         url('fonts/milkshake/milkshake-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**/
+@font-face {
+    font-family: 'neoretrodrawregular';
+    src: url('fonts/fontkit/neord___-webfont.woff2') format('woff2'),
+         url('fonts/fontkit/neord___-webfont.woff') format('woff'),
+         url('fonts/fontkit/neord___-webfont.ttf') format('truetype'),
+         url('fonts/fontkit/neord___-webfont.svg#neoretrodrawregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bungeeshade';
+    src: url('fonts/bungee/bungee-shade-webfont.woff2') format('woff2'),
+         url('fonts/bungee/de3sbungee-shade-webfont.woff') format('woff'),
+         url('fonts/bungee/bungee-shade-webfont.ttf') format('truetype'),
+         url('fonts/bungee/bungee-shade-webfont.svg#bungeeshade') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*styling for the main portion of content for the site (music/videos/press/etc)*/
+.main-content { /*REALLY BIG BACKGROUND IMAGE with parallax.*/
+    margin: 0;
+    padding-top: 50px;
+    position: relative;
+    /*background-image: url('images/Endless_Stair_Single_Artwork.jpg');*/
+    /*background-image: url('images/Bat_House_Love_Or.jpg'); */
+    background-image: url('images/main_content-side.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+/*style the app to have extra padding on the bottom*/
+.bit-widget-container {
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
